@@ -9,77 +9,111 @@
 
   <BODY>
     <div id='game-area' class='row'>
-      <div class='col-xs-offset-3 col-xs-5'>
-        <table class='table table-striped game-table'>
-          <tbody>
-            <tr class='row'>
-              <td id='cell-1-1' class='col-xs-1 text-center cell'>　</td>
-              <td id='cell-1-2' class='col-xs-1 text-center cell'>　</td>
-              <td id='cell-1-3' class='col-xs-1 text-center cell'>　</td>
-              <td id='cell-1-4' class='col-xs-1 text-center cell'>　</td>
-              <td id='cell-1-5' class='col-xs-1 text-center cell'>　</td>
-            </tr>
-            <tr class='row'>
-              <td id='cell-2-1' class='col-xs-1 text-center cell'>　</td>
-              <td id='cell-2-2' class='col-xs-1 text-center cell'>　</td>
-              <td id='cell-2-3' class='col-xs-1 text-center cell'>　</td>
-              <td id='cell-2-4' class='col-xs-1 text-center cell'>　</td>
-              <td id='cell-2-5' class='col-xs-1 text-center cell'>　</td>
-            </tr>
-            <tr class='row'>
-              <td id='cell-3-1' class='col-xs-1 text-center cell'>　</td>
-              <td id='cell-3-2' class='col-xs-1 text-center cell'>　</td>
-              <td id='cell-3-3' class='col-xs-1 text-center cell'>　</td>
-              <td id='cell-3-4' class='col-xs-1 text-center cell'>　</td>
-              <td id='cell-3-5' class='col-xs-1 text-center cell'>　</td>
-            </tr>
-            <tr class='row'>
-              <td id='cell-4-1' class='col-xs-1 text-center cell'>　</td>
-              <td id='cell-4-2' class='col-xs-1 text-center cell'>　</td>
-              <td id='cell-4-3' class='col-xs-1 text-center cell'>　</td>
-              <td id='cell-4-4' class='col-xs-1 text-center cell'>　</td>
-              <td id='cell-4-5' class='col-xs-1 text-center cell'>　</td>
-            </tr>
-            <tr class='row'>
-              <td id='cell-5-1' class='col-xs-1 text-center cell'>　</td>
-              <td id='cell-5-2' class='col-xs-1 text-center cell'>　</td>
-              <td id='cell-5-3' class='col-xs-1 text-center cell'>　</td>
-              <td id='cell-5-4' class='col-xs-1 text-center cell'>　</td>
-              <td id='cell-5-5' class='col-xs-1 text-center cell'>　</td>
-            </tr>
-          </tbody>
-        </table>
-        <div class='text-right'>
-          <div id='reset-btn' class='btn btn-primary'>
-            reset
+      <div class='col-xs-offset-1 col-xs-4'>
+        <div class='game-box'>
+          <div class = 'game-message-box'>
+            <div id='game-messages'>
+            </div>
+          </div>
+
+          <div class='player-buttons'>
+            <div class='col-xs-9 player-name-box'>
+              <div class='player-one-name form-group-sm'>
+                <input type="text" id='player-1-name' class="form-control player-name" placeholder='player 1'>
+              </div>
+            </div>
+            <div class='col-xs-3 player-btn-box'>
+              <div id='player-1' class='btn btn-success btn-xs col-sm-4 player-name-btn btn-join'>
+                参加
+              </div>
+            </div>
+
+            <div class='col-xs-9 player-name-box'>
+              <div class='player-two-name form-group-sm'>
+                <input type="text" id='player-2-name' class="form-control player-name" placeholder='player 2'>
+              </div>
+            </div>
+            <div class='col-xs-3 player-btn-box'>
+              <div id='player-2' class='btn btn-success btn-xs col-sm-4 player-name-btn btn-join'>
+                参加
+              </div>
+            </div>
+          </div>
+
+          <table class='table table-striped game-table'>
+            <tbody>
+              <tr>
+                <td id='cell-1-1' class='text-center cell'>　</td>
+                <td id='cell-2-1' class='text-center cell'>　</td>
+                <td id='cell-3-1' class='text-center cell'>　</td>
+              </tr>
+              <tr>
+                <td id='cell-1-2' class='text-center cell'>　</td>
+                <td id='cell-2-2' class='text-center cell'>　</td>
+                <td id='cell-3-2' class='text-center cell'>　</td>
+              </tr>
+              <tr>
+                <td id='cell-1-3' class='text-center cell'>　</td>
+                <td id='cell-2-3' class='text-center cell'>　</td>
+                <td id='cell-3-3' class='text-center cell'>　</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class='control-buttons rows'>
+            <div id='redraw-btn' class='btn btn-info btn-sm col-xs-4'>
+              refresh
+            </div>
+            <div id='reset-btn' class='btn btn-warning btn-sm col-xs-4 col-xs-offset-4'>
+              reset
+            </div>
           </div>
         </div>
 
       </div>
 
       <div class='col-xs-4'>
-        <ul id='messages'> </ul>
+        <div class = 'message-timeline panel panel-info'>
+          <ul id='messages'> </ul>
+        </div>
+      </div>
+      <!-- <div class='col-xs-1'>
+      </div> -->
+      <div class='row'>
+        <div class='message-box'>
+          <div class='col-xs-offset-1 col-xs-8'>
+            <form action='' class='message-form form-group'>
+              <input id='user_message' class='form-control' autocomplete='off' />
+            </form>
+          </div>
+          <div class='col-xs-2'>
+            <button class='btn btn-default', id='message-post-btn'>Post</button>
+          </div>
+        </div>
       </div>
     </div>
 
-    <form action='' >
-      <input id='m' autocomplete='off' /><button>Send</button>
-    </form>
 
   <script src='/socket.io/socket.io.js'></script>
-  <script src="https://code.jquery.com/jquery-3.1.1.slim.js"   integrity="sha256-5i/mQ300M779N2OVDrl16lbohwXNUdzL/R2aVUXyXWA="   crossorigin="anonymous"></script>
-  <!-- Latest compiled and minified JavaScript -->
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <script
+    src="https://code.jquery.com/jquery-3.2.1.min.js"
+    integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    crossorigin="anonymous"></script>
+  <script
+    src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+    integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+    crossorigin="anonymous"></script>
+
   <script>
       const blackStone = '🔵'
       const whiteStone = '❌'
-      const stones=[blackStone, whiteStone]
+      const blankStone = '　'
+      const stones=[blankStone, blackStone, whiteStone]
 
       const socket = io()
-      $('form').submit( (e)=> {
-        e.preventDefault();
-        socket.emit('chat message', $('#m').val())
-        $('#m').val('')
+      $('.message-form').on('submit', (e) => {
+        e.preventDefault()
+        socket.emit('chat message', $('#user_message').val())
+        $('#user_message').val('')
         return false;
       });
 
@@ -88,15 +122,83 @@
         return false
       });
 
-      socket.on('chat message', (msg) => {
+      $('.player-name-btn').on('click', (e) => {
+        let id = e.currentTarget.id
+        targetId = '#' + id + '-name'
+        if ($(e.currentTarget).hasClass('btn-join')) {
+          socket.emit('register player', {id: id, name: $(targetId).val()})
+        } else {
+          socket.emit('remove player', {id: id})
+        }
+        return false
+      })
+
+      socket.on('player registered', (data) => {
+        id = '#' + data.id
+        $(id).addClass('disabled')
+        targetId = id + '-name'
+        $(targetId).prop('disabled', true)
+        $(targetId).val(data.name)
+      })
+
+      socket.on('prompt player', (data) => {
+        $('#game-messages').text(`プレイヤー${data.name}のターンです`)
+      })
+
+      socket.on('clear game messages', (data) => {
+        $('#game-messages').text('')
+      })
+
+      socket.on('player removed', (data) => {
+        id = '#' + data.id
+        $(id).removeClass('disabled')
+        $(id).addClass('btn-success btn-join')
+        $(id).removeClass('btn-warning btn-clear')
+        $(id).text('参加')
+
+        targetId = id + '-name'
+        $(targetId).prop('disabled', false)
+        $(targetId).val('')
+      })
+
+      socket.on('reset players', () => {
+        btn = $('.player-name-btn')
+        btn.removeClass('disabled')
+        btn.addClass('btn-success btn-join')
+        btn.removeClass('btn-warning btn-clear')
+        btn.text('参加')
+
+        textForm = $('.player-name')
+        textForm.prop('disabled', false)
+        textForm.val('')
+
+        $('#messages').empty()
+      })
+
+      socket.on('set delete btn', (data) => {
+        id = '#' + data.id
+        $(id).removeClass('btn-success btn-join')
+        $(id).addClass('btn-warning btn-clear')
+        $(id).removeClass('disabled')
+        $(id).text('クリア')
+      })
+
+      socket.on('add message', (msg) => {
         $('#messages').append($('<li>').text(msg))
       })
 
+      socket.on('restore messages', (data) => {
+        $('#messages').empty()
+        for (let post of data.timeline) {
+          $('#messages').append($('<li>').text(`${post.name || '名無しさん'} : ${post.message}`))
+        }
+      })
+
       socket.on('board clicked', (result) => {
-        pos = result['pos']
-        player = result['player']
+        pos = result.pos
+        playerId = result.player_id
         console.log(result)
-        $(`#cell-${pos['x']}-${pos['y']}`).text(stones[player-1])
+        $(`#cell-${pos.x}-${pos.y}`).text(stones[playerId])
       })
 
       $('#reset-btn').on('click', () => {
@@ -104,11 +206,44 @@
         return false
       })
 
+      $('#redraw-btn').on('click', () => {
+        socket.emit('redraw board')
+        return false
+      })
+
+      socket.on('restart session', () => {
+        console.log('restarting')
+        $.ajax({
+          url: '/'
+        }).done( () => {
+          console.log('success')
+        })
+      })
+
+      $(document).on('ready', () =>{
+        console.log('user register')
+        socket.emit('register user')
+      })
+
       socket.on('reset board', () => {
         let cells = $('.cell')
-        for (var cell of cells) {
-          $(cell).text('　')
+        for (let cell of cells) {
+          $(cell).text(blankStone)
         }
+      })
+
+      socket.on('redraw board', (data) => {
+        board = data['board']
+        let cells = $('.cell')
+        for (let cell of cells) {
+          stone = stones[board[cell.id]]
+          $(cell).text(stone)
+        }
+      })
+
+      socket.on('victory', (result) => {
+        $('#game-messages').text(`プレイヤー${result.player_name}の勝利!!!`)
+        // $('#messages').append($('<li>').text(`プレイヤー${player}の勝利!!!`))
       })
     </script>
   </BODY>

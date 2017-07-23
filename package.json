@@ -4,7 +4,8 @@
   "description": "test",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build-css": "node-sass --include-path scss assets/scss/style.scss assets/css/style.css",
+    "watch-css": "nodemon -e scss -x \"npm run build-css\""
   },
   "repository": {
     "type": "git",
@@ -13,15 +14,14 @@
   "author": "Koji Onishi",
   "license": "MIT",
   "dependencies": {
+    "base64url": "^2.0.0",
+    "crypto": "0.0.3",
     "express": "^4.15.3",
+    "express-session": "^1.15.4",
     "socket.io": "^2.0.3"
   },
   "devDependencies": {
     "node-sass": "^4.5.3",
     "nodemon": "^1.11.0"
-  },
-  "scripts": {
-    "build-css": "node-sass --include-path scss assets/scss/style.scss assets/css/style.css",
-    "watch-css": "nodemon -e scss -x \"npm run build-css\""
   }
 }

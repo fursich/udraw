@@ -15,48 +15,102 @@ body {
 //    height: 100px;
 //  }
 
-  form {
-    background: #000;
-    padding: 3px;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-  }
-
-  form input {
-    border: 0;
-    padding: 10px;
-    width: 90%;
-    margin-right: .5%;
-  }
-
-  form button {
-    width: 9%;
-    background: rgb(130, 224, 255);
-    border: none;
-    padding: 10px;
-  }
-
   #game-area {
-    margin-top: 100px;
-  }
+    margin-top: 60px;
 
-  .game-table {
-    font-size: 200%;
-  }
+    .game-box {
+      width: 210px;
+      #game-messages {
+        height: 30px;
+        text-align: center;
+        color: red;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+      }
+      .player-buttons {
+        height: 90px;
 
-  #messages {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
+        .player-name-box {
+          margin-bottom: 10px;
+          padding: 0 10px 0 0;
+        }
+        .player-btn-box {
+          margin-top: 5px;
+          padding: 0;
+          #player-1 {
+            margin: 0;
+            width: 100%;
+          }
+          #player-2 {
+            margin: 0;
+            width: 100%;
+          }
+        }
+      }
+      .game-table {
+        font-size: 200%;
+        border: solid 1px #eee;
 
-    li {
-      padding: 5px 10px;
+        .cell {
+          width: 70px;
+        }
+      }
+      .control-buttons {
+        height: 40px;
+        #redraw-btn {
+        }
+        #reset-btn {
+        }
+      }
     }
 
-    li:nth-child(odd) {
-      background: #eee;
+    .message-timeline {
+      margin: 30px 0 0 0;
+      #messages {
+        height: 375px;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        font-size: 80%;
+
+        li {
+          padding: 5px 10px;
+        }
+
+        // li:nth-child(odd) {
+        //   background: #eee;
+        // }
+      }
+    }
+
+    .message-box {
+      position: relative;
+      padding: 0;
+      top: 50px;
+        .message-form {
+
+        // form {
+        //   background: #000;
+        //   padding: 3px;
+        //   // position: fixed;
+        //   width: 100%;
+        // }
+        //
+        // form input {
+        //   border: 0;
+        //   padding: 10px;
+        //   // width: 90%;
+        //   // margin-right: .5%;
+        // }
+        //
+        // form button {
+        //   width: 9%;
+        //   background: rgb(130, 224, 255);
+        //   border: none;
+        //   padding: 10px;
+        // }
+      }
     }
   }
-
 }

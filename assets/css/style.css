@@ -5,31 +5,49 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box; }
-  body form {
-    background: #000;
-    padding: 3px;
-    position: fixed;
-    bottom: 0;
-    width: 100%; }
-  body form input {
-    border: 0;
-    padding: 10px;
-    width: 90%;
-    margin-right: .5%; }
-  body form button {
-    width: 9%;
-    background: #82e0ff;
-    border: none;
-    padding: 10px; }
   body #game-area {
-    margin-top: 100px; }
-  body .game-table {
-    font-size: 200%; }
-  body #messages {
-    list-style-type: none;
-    margin: 0;
-    padding: 0; }
-    body #messages li {
-      padding: 5px 10px; }
-    body #messages li:nth-child(odd) {
-      background: #eee; }
+    margin-top: 60px; }
+    body #game-area .game-box {
+      width: 210px; }
+      body #game-area .game-box #game-messages {
+        height: 30px;
+        text-align: center;
+        color: red;
+        list-style-type: none;
+        margin: 0;
+        padding: 0; }
+      body #game-area .game-box .player-buttons {
+        height: 90px; }
+        body #game-area .game-box .player-buttons .player-name-box {
+          margin-bottom: 10px;
+          padding: 0 10px 0 0; }
+        body #game-area .game-box .player-buttons .player-btn-box {
+          margin-top: 5px;
+          padding: 0; }
+          body #game-area .game-box .player-buttons .player-btn-box #player-1 {
+            margin: 0;
+            width: 100%; }
+          body #game-area .game-box .player-buttons .player-btn-box #player-2 {
+            margin: 0;
+            width: 100%; }
+      body #game-area .game-box .game-table {
+        font-size: 200%;
+        border: solid 1px #eee; }
+        body #game-area .game-box .game-table .cell {
+          width: 70px; }
+      body #game-area .game-box .control-buttons {
+        height: 40px; }
+    body #game-area .message-timeline {
+      margin: 30px 0 0 0; }
+      body #game-area .message-timeline #messages {
+        height: 375px;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        font-size: 80%; }
+        body #game-area .message-timeline #messages li {
+          padding: 5px 10px; }
+    body #game-area .message-box {
+      position: relative;
+      padding: 0;
+      top: 50px; }
