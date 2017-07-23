@@ -85,9 +85,9 @@
               <input id='user_message' class='form-control' autocomplete='off' />
             </form>
           </div>
-          <div class='col-xs-2'>
+          <!-- <div class='col-xs-2'>
             <button class='btn btn-default', id='message-post-btn'>Post</button>
-          </div>
+          </div> -->
         </div>
       </div>
     </div>
@@ -172,7 +172,7 @@
         textForm.prop('disabled', false)
         textForm.val('')
 
-        $('#messages').empty()
+        $('#game-messages').empty()
       })
 
       socket.on('set delete btn', (data) => {
